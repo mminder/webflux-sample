@@ -11,7 +11,7 @@ This sample project serves as a starting point to try the various features of sp
 4. test REST Api using browser
 5. run parallel REST calls using 
     ```bash 
-    node client/client-script.js
+    node node-client/client.js
     ```
 6. observe spring logs in IntelliJ
 
