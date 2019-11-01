@@ -1,10 +1,10 @@
-package com.zuehlke.fullstack.webflux_sample.usecase;
+package com.zuehlke.fullstack.webflux_sample.usecase.sample;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
+import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/api/sample")
@@ -21,12 +21,9 @@ public class SampleController {
         return "Hello";
     }
 
-    @GetMapping(path = "/long", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
-    public Mono<String> getLongRequest() {
-        System.out.println("request " + Thread.currentThread().getName());
-
-        return this.sampleUseCase.getExternalSystemData().doOnNext((item) -> {
-            System.out.println("response " + Thread.currentThread().getName());
-        });
+    @GetMapping(path = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<String> getStream() {
+        return this.sampleUseCase.getStream().log();
     }
+
 }

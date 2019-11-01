@@ -6,7 +6,7 @@ const TIME_INTERVAL_MS = 10000;
 // running TOTAL_REQUESTS randomly in a time interval of TIME_INTERVAL_MS
 for (let i = 0; i < TOTAL_REQUESTS; i++) {
     setTimeout(() => {
-        httpGET('http://localhost:8080/api/sample/long');
+        httpGET('http://localhost:8080/api/external-system/local');
     }, Math.floor(Math.random() * TIME_INTERVAL_MS));
 }
 
