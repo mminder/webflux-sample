@@ -7,20 +7,20 @@ import reactor.core.publisher.Mono;
 @Service
 public class ExternalSystemUseCase {
 
-    public Mono<String> getLocal() {
+    public Mono<LocalSystemResponseDto> getLocal() {
         WebClient client = WebClient.create("http://localhost:3000");
         return client
                 .get()
-                .uri("/200?sleep=5000")
+                .uri("/200?sleep=3000")
                 .retrieve()
-                .bodyToMono(String.class);
+                .bodyToMono(LocalSystemResponseDto.class);
     }
 
     public Mono<String> getRemote() {
         WebClient client = WebClient.create("https://httpstat.us");
         return client
                 .get()
-                .uri("/200?sleep=5000")
+                .uri("/200?sleep=3000")
                 .retrieve()
                 .bodyToMono(String.class);
     }

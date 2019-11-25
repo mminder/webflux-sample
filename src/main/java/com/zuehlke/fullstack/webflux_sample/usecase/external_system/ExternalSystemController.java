@@ -16,7 +16,7 @@ public class ExternalSystemController {
     }
 
     @GetMapping(path = "/local")
-    public Mono<String> getLocal() {
+    public Mono<LocalSystemResponseDto> getLocal() {
         System.out.println("request " + Thread.currentThread().getName());
 
         return this.externalSystemUseCase.getLocal().doOnNext((item) -> {

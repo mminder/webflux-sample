@@ -8,7 +8,6 @@ import java.time.Duration;
 @Service
 public class SampleUseCase {
 
-
     public Flux<String> getStream() {
         Flux<Long> interval = Flux.interval(Duration.ofMillis(1000));
         return interval.map(Object::toString);
