@@ -3,11 +3,7 @@
 This sample project serves as a starting point to try the various features of spring webflux.
 
 ## Usage
-1. build 
-    ```bash 
-    ./gradlew build
-    ```
-2. Import in IntelliJ & run WebfluxSampleMainApplication
+1. Import in IntelliJ & run WebfluxSampleMainApplication
 4. test REST Api using browser
 5. run parallel REST calls using 
     ```bash 
