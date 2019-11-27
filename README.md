@@ -42,3 +42,13 @@ If you are producing many requests during your tests, e.g. using a load testing 
          -> this will execute a small load test with concurrent requests for the external system use case
     2. Observe the spring boot logs and notice how the same threads (about 8) handle all the requests and then defer the response. The response is handled reactively (async) by the same 8 threads.
 4. Check out Webflux testing (example provided in "FluxCombinationUseCaseTest")
+
+## Further Exploration
+- Implement Socket.io interface between Angular Client and Spring Backend
+- Implement Websocket External System, pipe Websocket messages from external system right to the client
+- Learn about Backpressure and what happens if the external system floods our backend with Websocket messages
+    - Try out RSocket & different Backpressure scenarios
+-  Integrate a reactive DB (mongo or postgres)
+    - Mongo e.g.: https://medium.com/hacktive-devs/building-the-backend-of-chat-applications-with-spring-webflux-and-reactive-mongodb-26347a1ddce4
+    - Postgres e.g.: https://medium.com/@thomasandolf/r2dbc-getting-started-d0afcfc05be2
+
